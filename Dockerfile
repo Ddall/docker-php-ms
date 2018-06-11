@@ -9,5 +9,6 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pecl install memcached --with-libmemcached-dir=/usr/include/libmemcached && docker-php-ext-enable memcached
+RUN composer global require hirak/prestissimo
 
 WORKDIR /var/www/symfony
